@@ -113,7 +113,7 @@ module.exports = {
     }),
     new WebpackCleanupPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[hash].css',
+      filename: isProduction ? '[contenthash].css' : '[hash].css',
       disable: !isProduction
     }),
     new HtmlWebpackPlugin({
